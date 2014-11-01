@@ -30,12 +30,9 @@ db_file_open(db_file_t *file, const char *filename, int rdonly)
 		file->fd = open(filename, O_RDONLY, 0644);
 	else
 		file->fd = open(filename, O_RDWR | O_CREAT, 0644);
-
 	if (file->fd == -1)
 		return DB_SYS_ERROR;
-
 	file->rdonly = rdonly;
-
 	return DB_OK;
 }
 
